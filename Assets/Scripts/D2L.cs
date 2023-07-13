@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LTurn : MonoBehaviour
+public class D2L : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 4f;
@@ -23,20 +23,20 @@ public class LTurn : MonoBehaviour
 
     void Update()
     {
-        if(isTurning == false)
+        if (isTurning == false)
         {
-            LTurnMove();
+            D2LMove();
         }
 
-        if(isTurning == true)
+        if (isTurning == true)
         {
-            MoveDown();
+            MoveLeft();
         }
     }
 
-    private void LTurnMove()
+    private void D2LMove()
     {
-        Vector3 movePosition = new Vector3(transform.position.x + (direction * moveSpeed * Time.deltaTime), transform.position.y, 0f);
+        Vector3 movePosition = new Vector3(transform.position.x, transform.position.y + (direction * moveSpeed * Time.deltaTime), 0f);
         transform.position = movePosition;
     }
 
@@ -50,16 +50,16 @@ public class LTurn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Turn"))
-        {   
-            carSpriteRenderer.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+        if (collision.CompareTag("DTurn"))
+        {
+            carSpriteRenderer.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
             isTurning = true;
         }
     }
 
-    private void MoveDown()
+    private void MoveLeft()
     {
-        Vector3 movePosition = new Vector3(transform.position.x, transform.position.y - (direction * moveSpeed * Time.deltaTime), 0f);
+        Vector3 movePosition = new Vector3(transform.position.x - (direction * moveSpeed * Time.deltaTime), transform.position.y, 0f);
         transform.position = movePosition;
     }
 }

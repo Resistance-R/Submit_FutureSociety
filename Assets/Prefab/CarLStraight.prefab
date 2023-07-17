@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 136130849060333101}
   m_Layer: 0
   m_Name: CarLStraight
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   direction: 1
+  LSGO: 0
 --- !u!61 &7993208236426785760
 BoxCollider2D:
   m_ObjectHideFlags: 0

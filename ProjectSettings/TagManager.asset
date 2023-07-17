@@ -7,6 +7,9 @@ TagManager:
   - Break
   - Turn
   - DTurn
+  - ThreeWayZone
+  - Vehicle
+  - Blocker
   layers:
   - Default
   - TransparentFX
